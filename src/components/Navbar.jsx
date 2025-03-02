@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
+import logo from "../assets/logo-black.png"; // Import the logo
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -24,17 +25,23 @@ const Navbar = () => {
 	return (
 		<nav className="bg-[#020301] text-white px-6 py-4 shadow-md">
 			<div className="max-w-7xl mx-auto flex justify-between items-center">
+				{/* Logo */}
 				<Link
 					to="/"
-					className="text-2xl font-bold tracking-wide"
+					className="flex items-center"
 				>
-					Convidat 🌿
+					<img
+						src={logo}
+						alt="Convidat Logo"
+						className="h-14 w-auto"
+					/>{" "}
+					{/* Adjust size if needed */}
 				</Link>
 
 				<div className="hidden md:flex space-x-6 items-center">
 					<Link
 						to="/"
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Home
 					</Link>
@@ -46,7 +53,7 @@ const Navbar = () => {
 					>
 						<button
 							onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-							className="flex items-center gap-1 hover:text-[#b2b8d8] transition focus:outline-none"
+							className="flex items-center gap-1 hover:text-[#b2b8d8] focus:outline-none"
 						>
 							Explore <ChevronDown size={16} />
 						</button>
@@ -80,31 +87,31 @@ const Navbar = () => {
 
 					<Link
 						to="/resources"
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Resources
 					</Link>
 					<Link
 						to="/volunteerism"
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Volunteerism
 					</Link>
 					<Link
 						to="/leadership"
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Leadership
 					</Link>
 					<Link
 						to="/dashboard"
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Dashboard
 					</Link>
 					<Link
 						to="/login"
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8] text-[#b2b8d8]"
 					>
 						Login
 					</Link>
@@ -123,27 +130,27 @@ const Navbar = () => {
 					<Link
 						to="/"
 						onClick={() => setIsOpen(false)}
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Home
 					</Link>
 
 					<button
 						onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-						className="flex justify-between items-center w-full hover:text-[#b2b8d8] transition"
+						className="flex justify-between items-center w-full hover:text-[#b2b8d8]"
 					>
 						Explore <ChevronDown size={16} />
 					</button>
 
 					{isDropdownOpen && (
-						<div className="flex flex-col space-y-2 bg-[#1a1a1a] px-4 py-2 rounded-lg">
+						<div className="flex flex-col space-y-2 bg-[#020301] px-4 py-2 rounded-lg">
 							<Link
 								to="/places"
 								onClick={() => {
 									setIsDropdownOpen(false);
 									setIsOpen(false);
 								}}
-								className="hover:bg-[#b2b8d8] px-4 py-2 rounded transition"
+								className="hover:text-[#b2b8d8]"
 							>
 								Places
 							</Link>
@@ -153,7 +160,7 @@ const Navbar = () => {
 									setIsDropdownOpen(false);
 									setIsOpen(false);
 								}}
-								className="hover:bg-[#b2b8d8] px-4 py-2 rounded transition"
+								className="hover:text-[#b2b8d8]"
 							>
 								Hotels
 							</Link>
@@ -163,7 +170,7 @@ const Navbar = () => {
 									setIsDropdownOpen(false);
 									setIsOpen(false);
 								}}
-								className="hover:bg-[#b2b8d8] px-4 py-2 rounded transition"
+								className="hover:text-[#b2b8d8]"
 							>
 								Businesses
 							</Link>
@@ -173,35 +180,35 @@ const Navbar = () => {
 					<Link
 						to="/resources"
 						onClick={() => setIsOpen(false)}
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Resources
 					</Link>
 					<Link
 						to="/volunteerism"
 						onClick={() => setIsOpen(false)}
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Volunteerism
 					</Link>
 					<Link
 						to="/leadership"
 						onClick={() => setIsOpen(false)}
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Leadership
 					</Link>
 					<Link
 						to="/dashboard"
 						onClick={() => setIsOpen(false)}
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Dashboard
 					</Link>
 					<Link
 						to="/login"
 						onClick={() => setIsOpen(false)}
-						className="hover:text-[#b2b8d8] transition"
+						className="hover:text-[#b2b8d8]"
 					>
 						Login
 					</Link>
