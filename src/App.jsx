@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Businesses from "./pages/Businesses";
+
 import CarbonFootprint from "./pages/CarbonFootprint";
 import Dashboard from "./pages/Dashboard";
 import Hotels from "./pages/Hotels";
@@ -25,7 +26,7 @@ const App = () => {
 					element={<Businesses />}
 				/>
 				<Route
-					path="/carbon-footprint"
+					path="/carbonfootprint"
 					element={<CarbonFootprint />}
 				/>
 				<Route
